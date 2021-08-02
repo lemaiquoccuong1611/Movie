@@ -1,0 +1,53 @@
+/* desktop first 
+xây dựng website ở màn hình lớn trước rồi chỉnh dần cho màn hình nhỏ  */
+
+/* mobile first 
+xây dựng website ở màn hình nhỏ trước rồi chỉnh dần cho màn hình lớn hơn */
+
+h1{
+    background-color: red;
+}
+
+/* nếu muốn qua 1 màn hình khác sẽ chuyển màu khác thì : 
+type: screen, print, speech, all 
+screen là dùng nhiều nhất 99%*/
+/* max-width thì lớn trước nhỏ sau  */
+@media screen and (max-width:1200px){
+    /* max-width là màn hình tối đa mà code sẽ ảnh hưởng ở vùng nhỏ hơn 1200  
+    lớn hơn 1200px vẫn sẽ hiện màu đỏ*/
+    h1{
+        background-color: gold;
+    }
+}
+@media screen and (max-width:768px){
+    /* max-width là màn hình tối đa mà code sẽ ảnh hưởng ở vùng nhỏ hơn 1200  
+    lớn hơn 1200px vẫn sẽ hiện màu đỏ*/
+    h1{
+        background-color: green;
+    }
+}
+
+h2{
+    background-color: grey;
+}
+
+/* min-width thì nhỏ trước lớn sau  */
+@media screen and (min-width:768px){
+    /* max-width là màn hình tối đa mà code sẽ ảnh hưởng ở vùng lớn hơn 768  
+    lớn hơn 768px vẫn sẽ hiện màu đỏ*/
+    h2{
+        background-color: pink;
+    }
+}
+
+@media screen and (min-width:900px){
+    h2{
+        background-color: purple;
+    }
+}
+
+@media screen and (min-width:900px) and (max-width:1000px){
+    h2{
+        background-color: saddlebrown;
+    }
+}

@@ -1,0 +1,516 @@
+/* Global  */
+html,body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.images-fluid{
+    width: 100%;
+}
+.header {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/* header */
+#movieNavBar .navbar-nav{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+#movieNavBar .nav-item::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    display: block;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    transition: all 0.5s;
+}
+#movieNavBar .nav-item:hover::after{
+    width: 100%;
+}
+#movieNavBar .nav-item.active::after{
+    width: 100%;
+}
+#movieNavBar a{
+    padding: 0 25px;
+}
+
+/* carousel */
+#carouselMovie .carousel-caption{
+    text-align: left;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+#carouselMovie .carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    background-color: transparent;
+    opacity: 1;
+}
+#carouselMovie .carousel-indicators li.active{
+    background-color: white;
+}
+#carouselMovie .carousel-indicators{
+    justify-content: flex-start;
+    left: 50%;
+    transform: translate(-50%);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#carouselMovie .btn-trailer{
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    border-radius: 200px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    letter-spacing: 3px;
+    outline: none;
+}
+#carouselMovie .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient();
+}
+/* newIn  */
+.newIn__title{
+    color: #ec7532;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid gray;
+    padding: 0 0 20px;
+    position: relative;
+    margin-top: 80px;
+}
+.newIn__title::after{
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    position: absolute;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    bottom: -1px;
+    left: 0;
+}
+.newIn__detail{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.8);
+    color: white;
+    width: 80%;
+    text-align: center;
+}
+.newIn__detail i{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    line-height: 80px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+.newIn__detail a{
+    /* thẻ a là thẻ inline để có thể đẩy thẻ a thì phải display:block  */
+    display: block;
+    font-size: 12px;
+    color: white;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
+.newIn__detail p{
+    font-size: 12px;
+}
+.newIn__infor{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.newIn__vote {
+    text-align: center;
+    margin-top: 20px;
+}
+.newIn__rating{
+    color: #fbbd61;
+}
+.newIn__rating i{
+    font-size: 15px;
+}
+.newIn__rating .newIn-no{
+    color: #d8d8d8;
+}
+.newIn__vote h4{
+    font-size: 18px;
+    color: #4a4a4a;
+}
+.newIn__detail{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    /* ẩn để người dùng không thấy được  */
+    /* scale phóng to lên  */
+}
+.newIn__infor:hover .newIn__detail{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%,-50%) scale(1) ;
+    /* trong 1 thẻ không được có 2 cùng transform: ; vì thẻ  sau sẽ đè lên thẻ trước , nên bắt buộc phải ghi chung  */
+}
+.newIn__overlay{
+    background: linear-gradient(to bottom,#fbbd61,#ec7532);
+    position: absolute;
+    top: 0;
+    left: -250%;
+    width: 200%;
+    height: 100%;
+    transform: skewX(30deg);
+    transition: all 0.4s;
+    opacity: 0.9;
+}
+.newIn__infor:hover .newIn__overlay{
+    left: -100px;
+}
+
+/* SHOWTIME  */
+.showtimes{
+    padding: 45px 0;
+}
+.showtimes .nav-tabs .nav-link.active{
+    border-color: white; 
+}
+.showtimes .nav-tabs .nav-link:hover{
+    border-color: white;
+}
+.showtimes .nav-tabs .nav-link.active::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    bottom: -1px;
+    left: 0;
+}
+.showtimes .nav-tabs .nav-item .nav-link.active{
+    color: #ec7532!important;
+}
+
+.showtimes .nav-tabs .nav-link::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 3px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    bottom: -1px;
+    left: 0px;
+    transition: all 0.5s;
+}
+.row{
+    padding: 45px 0;
+}
+.showtimes .nav-tabs .nav-link:hover::after {
+   width: 100%;
+}
+.showtimes .nav-link{
+    font-size: 20px;
+    color: grey;   
+    position: relative;
+    padding: 10px 30px;
+} 
+.showtimes-span{
+    color: #ec7532;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.showtime-h3{
+    letter-spacing: 1px;
+}
+.showtimes p{
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+.showtime-button a{
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #ec7532;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.showtime-button .showtimes-arrow{
+    color: #ec7532;
+    transition: all 0.5s;
+    font-size: 12px;
+}
+.showtime-button:hover .showtimes-arrow{
+    color: black;
+}
+.showtime-button:hover a{
+    color: black;
+}
+.row-tag .viewtimes{
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #4a4a4a;
+}
+.row-tag .time{
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 7px 10px;
+    letter-spacing: 2px;
+    color: #717171;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+}
+.row-tag .time-1{
+    opacity: 0.5;
+}
+.row-tag .row-span span{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    text-align: center;
+}
+.row-tag .row-span{
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+.row .col-2 img{
+    border-radius: 10px;
+}
+
+
+
+/* CONTACT  */
+.contact-content{
+    text-align: center;
+    padding: 55px 0;
+}
+.contact-content p{
+    font-size: 23px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #4a4a4a;
+}
+.contact-content span{
+    font-size: 46px;
+    font-weight: 400;
+    color: #ec7532;
+    letter-spacing: 1px;
+}
+/* CONMINGSOON  */
+.comingsoon{
+    background: black;
+}
+.comingsoon-top{
+    padding: 40px 0;
+    background-image: url(../img/slide-3.png);
+    background-position: center;
+    background-size: cover;
+}
+.comingsoon-top .newIn__title{
+    color: white;
+}
+.comingsoon-top .coming-detail1{
+    color: white;
+    font-size: 16px;
+}
+.comingsoon-top h3{
+    font-size: 34px;
+    color: white;
+}
+.coming-detail .fa-star{
+    color: #fbbd61;
+    /* margin-right: 8px; */
+    font-size: 14px;
+}
+.coming-detail .coming-date{
+    font-size: 14px;
+    opacity: 0.75;
+    color: #fff;
+}
+.coming-detail .coming-rating{
+    margin-right: 10px;
+}
+.coming-detail a{
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ec7532;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.coming-detail a:hover{
+    color: #ba9a56;
+}
+.comingsoon .comingsoon-top img{
+    width: 100%;
+}
+.coming-detail{
+    margin-top: 50px;
+}
+.coming-trailer{
+    position: relative;
+}
+.coming-trailer i{
+    width: 80px;
+    height: 80px;
+    display: block;
+    border: 2px solid #ec7532;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.coming-bot{
+    padding-bottom: 30px;
+    background: #101010;
+    padding-top: 20px;
+}
+.coming-bot .tag{
+    margin: 40px 0;
+}   
+.coming-bot .tag img{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.coming-bot .coming-infor{
+    text-align: center;
+}
+.coming-bot .tag h5{
+    font-size: 16px;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    color: white;
+    /* text-overflow: ellipsis; */
+}
+.coming-bot .tag span{
+    font-size: 14px;
+    opacity: 0.5;
+    color: #fff;
+    text-align: center;
+}
+.coming-bot .col-2.active{
+    opacity: 1;
+}
+.coming-bot .col-2{
+    opacity: 0.5;
+}
+.coming-bot .col-2:hover{
+    opacity: 1;
+}
+.coming-bot .container{
+    position: relative;
+    width: 100%;
+}
+.coming-bot .coming-arrow{
+    position: absolute;
+    font-size: 30px;
+    top: 35%;
+}
+.coming-bot .fa-angle-left{
+    left: -45px;
+    color: #ec7532;
+    transition: all 0.5s;
+}
+.coming-bot .fa-angle-right{
+    right: -45px;
+    color: #ec7532;
+    transition: all 0.5s;
+}
+.coming-bot .fa-angle-left:hover{
+    left: -30px;
+    opacity: 0.6;
+}
+.coming-bot .fa-angle-right:hover{
+    right: -30px;
+    opacity: 0.6;
+}
+
+/* FOOTER  */
+footer{
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 75px 0 0;
+    color: #fff;
+    background: #101010;
+    
+}
+footer ul{
+    list-style: none;
+    padding: 0;
+}
+.footer-row{
+    display: flex;
+    margin-bottom: 30px;
+}
+.footer-row h6{
+    font-size: 16px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ec7532;
+    border: none;
+    padding-bottom: 20px;
+}
+.footer-row ul li a{
+    font-size: 13px;
+    display: inline-block;
+    padding: 3px 0;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-decoration: none;   
+    transition: all 0.5s;
+}
+.footer-row ul li a:hover{
+    color: #fbbd61;
+}
+footer .fab{
+    width: 25px;
+    transform: translateY(2px);
+    color: rgba(255,255,255,.3);
+    transition: all 0.5s;
+}
+footer .footer-row li:hover .fab{
+    color: #fbbd61;
+}
+.footer-infor{
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+.footer-infor p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.footer-infor span{
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.footer-infor span:hover{
+    color: #ec7532;
+}
